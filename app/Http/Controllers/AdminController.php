@@ -11,6 +11,6 @@ class AdminController extends Controller
     }
 
     public function index(){
-        echo "Hello User";
+        return view('layouts.appLayout');
     }
 }
