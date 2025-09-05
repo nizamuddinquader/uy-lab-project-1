@@ -1,5 +1,10 @@
 @extends('dashboard.appLayout')
 
+@section('pageTitle')
+Dashboard
+@endsection
+
+
 @section('content')
  <div class="col-md-10 content">
     <div class="row">

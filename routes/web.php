@@ -26,6 +26,8 @@ Route::middleware('auth')->group(function () {
 
 // Route::get('/admin/alluser',[AdminController::class,'index'])->name('admin.alluser');
 Route::get('/admin/adduser',[AdminController::class,'addUser'])->name('admin.adduser');
+Route::get('/admin/edituser',[AdminController::class,'editUser'])->name('admin.edituser');
+Route::get('/admin/showuser',[AdminController::class,'showUser'])->name('admin.showuser');
 
 
 
