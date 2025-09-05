@@ -10,16 +10,21 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('layouts.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    Route::get('/admin/alluser',function(){
+        return view('layouts.alluser');
+    })->name('admin.alluser');
+
 });
 
-Route::get('/admin',[AdminController::class,'index']);
+// Route::get('/admin/alluser',[AdminController::class,'index'])->name('admin.alluser');
 
 
 
