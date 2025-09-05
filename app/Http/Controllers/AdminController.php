@@ -15,6 +15,6 @@ class AdminController extends Controller
     // }
 
     public function addUser(){
-        return view('admin.dashboard');
+        return view('dashboard.adduser');
     }
 }

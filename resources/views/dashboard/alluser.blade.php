@@ -21,7 +21,7 @@
                         <i class="fab fa-gg-circle"></i>All User Information
                     </div>  
                     <div class="col-md-4 card_button_part">
-                        <a href="add-user.html" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i>Add User</a>
+                        <a href="{{ route('admin.adduser') }}" class="btn btn-sm btn-dark"><i class="fas fa-plus-circle"></i>Add User</a>
                     </div>  
                 </div>
                 </div>

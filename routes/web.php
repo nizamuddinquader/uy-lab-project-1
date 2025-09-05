@@ -25,6 +25,7 @@ Route::middleware('auth')->group(function () {
 });
 
 // Route::get('/admin/alluser',[AdminController::class,'index'])->name('admin.alluser');
+Route::get('/admin/adduser',[AdminController::class,'addUser'])->name('admin.adduser');
 
 
 
