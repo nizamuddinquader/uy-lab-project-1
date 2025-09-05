@@ -12,7 +12,7 @@
 
 <body>
 
-    @include('layouts.header')
+    @include('dashboard.header')
     <section>
         <div class="container-fluid content_part">
             <div class="row">
@@ -40,7 +40,7 @@
         </div>
     </section>
 
-    @include('layouts.footer')
+    @include('dashboard.footer')
 
 
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>

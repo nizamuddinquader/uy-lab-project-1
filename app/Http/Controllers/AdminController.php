@@ -13,4 +13,8 @@ class AdminController extends Controller
     // public function index(){
     //     return view('layouts.alluser');
     // }
+
+    public function addUser(){
+        return view('admin.dashboard');
+    }
 }
