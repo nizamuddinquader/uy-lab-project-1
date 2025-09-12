@@ -19,7 +19,7 @@ Dashboard
     </div>
     <div class="row">
         <div class="col-md-12 welcome_part">
-            <p><span>Welcome Mr.</span> Rasel Islam</p>
+            <p><span>Welcome Mr. </span>{{ Auth::user()->name }}</p>
         </div>
     </div>
 </div>

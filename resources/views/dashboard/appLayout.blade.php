@@ -19,7 +19,7 @@
                 <div class="col-md-2 sidebar_part">
                     <div class="user_part">
                         <img class="" src="{{ asset('assets/images/avatar.png') }}" alt="avatar"/>
-                        <h5>Nizam Uddin</h5>
+                        <h5>{{ Auth::user()->name }}</h5>
                         <p><i class="fas fa-circle"></i> Online</p>
                     </div>
                     <div class="menu">
@@ -31,6 +31,9 @@
                             <li><a href="#"><i class="fas fa-globe"></i> Live Site</a></li>
                             <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                         </ul>
+                        <!-- <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          {{ csrf_field() }}
+                        </form> -->
                     </div>
                 </div>
 

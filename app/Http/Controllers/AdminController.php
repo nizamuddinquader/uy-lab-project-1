@@ -26,4 +26,6 @@ class AdminController extends Controller
     public function showUser(){
         return view('dashboard.showuser');
     }
+
+    
 }

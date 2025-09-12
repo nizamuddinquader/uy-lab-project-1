@@ -19,7 +19,7 @@
                             <div class="col-md-7 pe-0">
                                 <div class="form-left h-100 py-5 px-5">
                                     <form class="row g-4" method="POST" action="{{ route('login') }}">
-                                    
+                                    @csrf
                                         <div class="col-12">
                                             <label for="email" >Username<span class="text-danger">*</span></label>
                                             <div class="input-group">
