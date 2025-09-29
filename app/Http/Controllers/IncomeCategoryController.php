@@ -15,7 +15,7 @@ class IncomeCategoryController extends Controller
     }
 
     public function create(){
-        return view('income.category.create');
+        return view('income.category.create-category');
     }
 
     public function store(Request $request){
