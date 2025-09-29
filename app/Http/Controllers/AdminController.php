@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-     public function __construct(){
+    public function __construct(){
         $this->middleware('auth');
     }
 
@@ -26,6 +26,20 @@ class AdminController extends Controller
     public function showUser(){
         return view('dashboard.showuser');
     }
+
+    public function updateUser(){
+        // return view('dashboard.deleteuser');
+    }
+    public function softDeleteUser(){
+        // return view('dashboard.deleteuser');
+    }
+    public function restoreUser(){
+        // return view('dashboard.deleteuser');
+    }
+    public function deleteUser(){
+        // return view('dashboard.deleteuser');
+    }
+    
 
     
 }
