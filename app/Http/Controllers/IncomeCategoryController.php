@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\IncomeCategory;
@@ -12,6 +13,13 @@ class IncomeCategoryController extends Controller
 {
      public function __construct(){
         $this->middleware('auth');
+    }
+
+    public function index(){
+
+        $income_categories =  IncomeCategory::latest()->paginate(5);
+
+        return view('income.category.category-index',compact('income_categories'));
     }
 
     public function create(){
@@ -36,19 +44,23 @@ class IncomeCategoryController extends Controller
             'incate_creator' => $incate_creator,
         ]);
 
+        flash()->success('Income Category created successfully!');
+        return redirect()->route('admin.IncomeCategory.index');
+    }
    
        
-
-        return redirect()->route('admin.IncomeCategory.create')->with('success','Income Category Added Successfully');
-    }
 
     public function edit(){
         return view('income.category.edituser');
     }
 
 
-    public function show(){
-        return view('income.category.showuser');
+    public function show($id){
+        $income_categories = IncomeCategory::where('incate_id','=',$id)->where('incate_status','=',1)->firstOrFail();
+        
+        $creator = User::find($income_categories->incate_creator);
+
+        return view('income.category.showuser',compact('income_categories', 'creator'));
     }
 
     public function update(){

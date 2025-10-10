@@ -1,7 +1,7 @@
 @extends('dashboard.appLayout')
 
 @section('pageTitle')
-User Registration
+Create Income Category
 @endsection
 
 @section('content')
@@ -20,6 +20,8 @@ User Registration
   </div>
   <div class="row">
       <div class="col-md-12 ">
+        
+
           <form method="post" action="{{ route('admin.IncomeCategory.store')}}">
             @csrf
               <div class="card mb-3">
@@ -35,7 +37,10 @@ User Registration
                     <div class="row mb-3">
                       <label for="income_category_name" class="col-sm-3 col-form-label col_form_label">Income Category Name<span class="req_star">*</span>:</label>
                       <div class="col-sm-7">
-                        <input type="text" class="form-control form_control" id="income_category_name" name="income_category_name">
+                        <input type="text" class="form-control form_control" id="income_category_name" name="income_category_name" required>
+                        @if ($errors->has('income_category_name'))
+                            <span class="text-danger">{{ $errors->first('name')}}</span>
+                        @endif
                       </div>
                     </div>
                     <div class="row mb-3">

@@ -36,37 +36,27 @@ Show User
                     <div class="col-md-8">
                         <table class="table table-bordered table-striped table-hover custom_view_table">
                             <tr>
-                            <td>Name</td>  
+                            <td>Income Category Name</td>  
                             <td>:</td>  
-                            <td>Rasel Islam</td>  
+                            <td>{{ $income_categories->incate_name }}</td>  
                             </tr>
                             <tr>
-                            <td>Phone</td>  
+                            <td>Remarks</td>  
                             <td>:</td>  
-                            <td>01757220125</td>  
+                            <td>{{ $income_categories->incate_remarks }}</td>  
                             </tr>
                             <tr>
-                            <td>Email</td>  
+                            <td>Income Category Creator</td>  
                             <td>:</td>  
-                            <td>uylab.rasel@gmail.com</td>  
+                            <td>{{ $creator ? $creator->name : 'unknown' }}</td>  
                             </tr>
                             <tr>
-                            <td>Username</td>  
+                            <td>Income Category Editor</td>  
                             <td>:</td>  
                             <td>raseldevs</td>  
                             </tr>
-                            <tr>
-                            <td>Role</td>  
-                            <td>:</td>  
-                            <td>---</td>  
-                            </tr>
-                            <tr>
-                            <td>Photo</td>  
-                            <td>:</td>  
-                            <td>
-                                <img class="img200" src="images/avatar.jpg" alt=""/>  
-                            </td>  
-                            </tr>
+                            
+                            
                         </table>
                     </div>
                     <div class="col-md-2"></div>
