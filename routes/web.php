@@ -59,7 +59,7 @@ Route::get('/admin/IncomeCategory/show/{id}',[IncomeCategoryController::class,'s
 Route::get('/admin/IncomeCategory/update',[IncomeCategoryController::class,'update'])->name('admin.IncomeCategory.update');
 Route::get('/admin/IncomeCategory/softDelete',[IncomeCategoryController::class,'softDelete'])->name('admin.IncomeCategory.softDelete');
 Route::get('/admin/IncomeCategory/restore',[IncomeCategoryController::class,'restore'])->name('admin.IncomeCategory.restore');
-Route::get('/admin/IncomeCategory/delete',[IncomeCategoryController::class,'delete'])->name('admin.IncomeCategory.delete');
+Route::delete('/admin/IncomeCategory/delete',[IncomeCategoryController::class,'destroy'])->name('admin.IncomeCategory.destroy');
 
 //expense routes
 Route::get('/admin/expense',[ExpenseController::class,'index'])->name('admin.expense.add');

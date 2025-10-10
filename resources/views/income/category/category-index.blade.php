@@ -46,19 +46,25 @@ Category Index
                     </thead>
                     <tbody>
 
-                    @foreach($income_categories as $income_categorie)
+                    @foreach($income_categories as $income_category)
                     <tr>
-                        <td>{{ $income_categorie->incate_id }}</td>
-                        <td>{{ $income_categorie->incate_name }}</td>
-                        <td>{{ $income_categorie->incate_remarks }}</td>
-                        <td>{{ $income_categorie->incate_creator }}</td>
-                        <td>{{ $income_categorie->incate_editor }}</td>
-                        <td>{{ $income_categorie->incate_slug }}</td>
-                        <td>{{ $income_categorie->incate_status }}</td>
+                        <td>{{ $income_category->incate_id }}</td>
+                        <td>{{ $income_category->incate_name }}</td>
+                        <td>{{ $income_category->incate_remarks }}</td>
+                        <td>{{ $income_category->incate_creator }}</td>
+                        <td>{{ $income_category->incate_editor }}</td>
+                        <td>{{ $income_category->incate_slug }}</td>
+                        <td>{{ $income_category->incate_status }}</td>
                         <td class="btn_group_manage text-center">
-                            <button class="btn btn-sm btn-success"><i class="fas fa-edit pe-2"></i>Edit</button>
-                            <button class="btn btn-sm btn-primary"><i class="fas fa-street-view pe-2"></i>View</button>
-                            <button class="btn btn-sm btn-danger"><i class="fas fa-trash pe-2"></i>Delete</button>
+                            <a href="{{ route('admin.IncomeCategory.show', $income_category->incate_id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{ route('admin.IncomeCategory.edit', $income_category->incate_id) }}" class="btn btn-sm btn-success">Show</a>
+                            <form action="{{ route('admin.IncomeCategory.destroy', $income_category->incate_id) }}" method="POST" class="d-inline">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">
+                                    <i class="fas fa-trash pe-2"></i>Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

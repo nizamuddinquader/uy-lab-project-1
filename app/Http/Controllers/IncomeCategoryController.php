@@ -74,7 +74,7 @@ class IncomeCategoryController extends Controller
     public function restore(){
         // return view('income.category.deleteuser');
     }
-    public function delete(){
+    public function destroy(){
         // return view('income.category.deleteuser');
     }
 }
