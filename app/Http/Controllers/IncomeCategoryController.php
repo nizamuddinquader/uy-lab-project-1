@@ -60,7 +60,9 @@ class IncomeCategoryController extends Controller
         
         $creator = User::find($income_categories->incate_creator);
 
-        return view('income.category.showuser',compact('income_categories', 'creator'));
+        $editor = User::find($income_categories->incate_editor);
+
+        return view('income.category.showuser',compact('income_categories', 'creator', 'editor'));
     }
 
     public function update(){

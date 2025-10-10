@@ -53,7 +53,7 @@ Show User
                             <tr>
                             <td>Income Category Editor</td>  
                             <td>:</td>  
-                            <td>raseldevs</td>  
+                            <td>{{$editor ? $editor->name : 'Not Found' }}</td>  
                             </tr>
                             
                             
