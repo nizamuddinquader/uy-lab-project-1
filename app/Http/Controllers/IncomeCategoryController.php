@@ -44,25 +44,31 @@ class IncomeCategoryController extends Controller
             'incate_creator' => $incate_creator,
         ]);
 
-        flash()->success('Income Category created successfully!');
-        return redirect()->route('admin.IncomeCategory.index');
+        flash()->success('Income category created successfully!');
+        return redirect()->route('admin.income.category.index');
     }
    
        
 
-    public function edit(){
-        return view('income.category.edituser');
+    public function edit($id)
+    {
+        $income_category = IncomeCategory::where('incate_id', $id)
+                        ->where('incate_status', 1)
+                        ->firstOrFail();
+
+    
+        return view('income.category.edit-category', compact('income_category'));
+    
     }
-
-
-    public function show($slug){
-        $income_categories = IncomeCategory::where('incate_id','=',$slug)->where('incate_status','=',1)->firstOrFail();
+        
+    public function show($id){
+        $income_categories = IncomeCategory::where('incate_id','=',$id)->where('incate_status','=',1)->firstOrFail();
         
         $creator = User::find($income_categories->incate_creator);
 
         $editor = User::find($income_categories->incate_editor);
 
-        return view('income.category.showuser',compact('income_categories', 'creator', 'editor'));
+        return view('income.category.show-category', compact('income_categories', 'creator', 'editor'));
     }
 
     public function update(){
@@ -74,7 +80,19 @@ class IncomeCategoryController extends Controller
     public function restore(){
         // return view('income.category.deleteuser');
     }
-    public function destroy(){
-        // return view('income.category.deleteuser');
+    public function destroy($id)
+    {
+        $income_category = IncomeCategory::findOrFail($id);
+        $income_category->delete();
+
+        flash()->success('Income category delated successfully!');
+        return redirect()->route('admin.income.category.index');
+                     
     }
+    
+
+
+
+
+
 }

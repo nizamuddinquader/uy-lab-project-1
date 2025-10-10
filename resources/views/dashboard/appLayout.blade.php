@@ -26,7 +26,7 @@
                         <ul>
                             <li><a href="{{ route('dashboard') }}"><i class="fas fa-home"></i> Dashboard</a></li>
                             <li><a href="{{ route('admin.alluser') }}"><i class="fas fa-user-circle"></i> Users</a></li>
-                            <li><a href="#"><i class="fas fa-images"></i> Banner</a></li>
+                            <li><a href="{{ route('admin.income.category.index') }}"><i class="fas fa-images"></i> Category</a></li>
                             <li><a href="#"><i class="fas fa-comments"></i> Contact Message</a></li>
                             <li><a href="#"><i class="fas fa-globe"></i> Live Site</a></li>
                             <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>

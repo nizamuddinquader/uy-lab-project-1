@@ -23,7 +23,7 @@ Show User
                 <div class="card-header">
                 <div class="row">
                     <div class="col-md-8 card_title_part">
-                        <i class="fab fa-gg-circle"></i>View User Information
+                        <i class="fab fa-gg-circle"></i>Category Information
                     </div>  
                     <div class="col-md-4 card_button_part">
                         <a href="{{ route('admin.alluser') }}" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All User</a>

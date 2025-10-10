@@ -1,7 +1,7 @@
 @extends('dashboard.appLayout')
 
 @section('pageTitle')
-Create Income Category
+Edit Income Category
 @endsection
 
 @section('content')
@@ -22,14 +22,16 @@ Create Income Category
       <div class="col-md-12 ">
         
 
-          <form method="post" action="{{ route('admin.IncomeCategory.store')}}">
+          <form method="post" action="{{ route('admin.income.category.update', $income_category->incate_id)}}">
             @csrf
+            @method('PUT')
+
               <div class="card mb-3">
                 <div class="card-header">
                   <div class="row">
                        
                       <div class="col-md-4 card_button_part">
-                          <a href="all-user.html" class="btn btn-sm btn-dark"><i class="fa-solid fa-arrow-left"></i>Back</a>
+                          <a href="all-user.html" class="btn btn-sm btn-dark"><i class="fas fa-th"></i>All User</a>
                       </div>  
                   </div>
                 </div>
@@ -37,7 +39,7 @@ Create Income Category
                     <div class="row mb-3">
                       <label for="income_category_name" class="col-sm-3 col-form-label col_form_label">Income Category Name<span class="req_star">*</span>:</label>
                       <div class="col-sm-7">
-                        <input type="text" class="form-control form_control" id="income_category_name" name="income_category_name" required>
+                        <input type="text" class="form-control form_control" id="income_category_name" name="income_category_name" value="{{ $income_category->incate_name}}" required>
                         @if ($errors->has('income_category_name'))
                             <span class="text-danger">{{ $errors->first('name')}}</span>
                         @endif
@@ -46,12 +48,12 @@ Create Income Category
                     <div class="row mb-3">
                       <label for="remarks" class="col-sm-3 col-form-label col_form_label">Remarks</label>
                       <div class="col-sm-7">
-                        <input type="text" class="form-control form_control" id="remarks" name="remarks">
+                        <input type="text" class="form-control form_control" id="remarks" name="remarks" value="{{ $income_category->incate_remarks}}">
                       </div>
                     </div>
                     
                     <div class="card-footer text-center mt-4">
-                        <button type="submit" class="btn btn-sm btn-dark">Create</button>
+                        <button type="submit" class="btn btn-sm btn-dark">Update</button>
                     </div> 
                     
                     

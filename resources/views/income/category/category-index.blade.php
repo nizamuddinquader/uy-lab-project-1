@@ -56,9 +56,10 @@ Category Index
                         <td>{{ $income_category->incate_slug }}</td>
                         <td>{{ $income_category->incate_status }}</td>
                         <td class="btn_group_manage text-center">
-                            <a href="{{ route('admin.IncomeCategory.show', $income_category->incate_slug) }}" class="btn btn-sm btn-primary">Edit</a>
-                            <a href="{{ route('admin.IncomeCategory.edit', $income_category->incate_id) }}" class="btn btn-sm btn-success">Show</a>
-                            <form action="{{ route('admin.IncomeCategory.destroy', $income_category->incate_id) }}" method="POST" class="d-inline">
+                            <a href="{{ route('admin.income.category.edit', $income_category->incate_id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{ route('admin.income.category.show', $income_category->incate_id) }}" class="btn btn-sm btn-success">Show</a>
+
+                            <form action="{{ route('admin.income.category.destroy', $income_category->incate_id) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">
@@ -84,7 +85,7 @@ Category Index
     </div>
 
     <div class=" mt-4">
-    {{ $income_categories->links('pagination::bootstrap-5') }}
+        {{ $income_categories->links('pagination::bootstrap-5') }}
     </div>
 
 
