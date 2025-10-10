@@ -55,8 +55,8 @@ class IncomeCategoryController extends Controller
     }
 
 
-    public function show($id){
-        $income_categories = IncomeCategory::where('incate_id','=',$id)->where('incate_status','=',1)->firstOrFail();
+    public function show($slug){
+        $income_categories = IncomeCategory::where('incate_id','=',$slug)->where('incate_status','=',1)->firstOrFail();
         
         $creator = User::find($income_categories->incate_creator);
 

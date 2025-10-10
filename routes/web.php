@@ -51,12 +51,12 @@ Route::get('/admin/income/delete',[IncomeController::class,'delete'])->name('adm
 
 
 //income category routes
-Route::get('/admin/IncomeCategory/index',[IncomeCategoryController::class,'index'])->name('admin.IncomeCategory.index');
-Route::get('/admin/IncomeCategory/create',[IncomeCategoryController::class,'create'])->name('admin.IncomeCategory.create');
-Route::post('/admin/IncomeCategory/store',[IncomeCategoryController::class,'store'])->name('admin.IncomeCategory.store');
-Route::get('/admin/IncomeCategory/edit',[IncomeCategoryController::class,'edit'])->name('admin.IncomeCategory.edit');
-Route::get('/admin/IncomeCategory/show/{id}',[IncomeCategoryController::class,'show'])->name('admin.IncomeCategory.show');
-Route::get('/admin/IncomeCategory/update',[IncomeCategoryController::class,'update'])->name('admin.IncomeCategory.update');
+Route::get('/admin/income/category/index',[IncomeCategoryController::class,'index'])->name('admin.IncomeCategory.index');
+Route::get('/admin/income/category/create',[IncomeCategoryController::class,'create'])->name('admin.IncomeCategory.create');
+Route::post('/admin/income/category/store',[IncomeCategoryController::class,'store'])->name('admin.IncomeCategory.store');
+Route::get('/admin/income/category/edit',[IncomeCategoryController::class,'edit'])->name('admin.IncomeCategory.edit');
+Route::get('/admin/income/category/show/{slug}',[IncomeCategoryController::class,'show'])->name('admin.IncomeCategory.show');
+Route::get('/admin/income/category/update',[IncomeCategoryController::class,'update'])->name('admin.IncomeCategory.update');
 Route::get('/admin/IncomeCategory/softDelete',[IncomeCategoryController::class,'softDelete'])->name('admin.IncomeCategory.softDelete');
 Route::get('/admin/IncomeCategory/restore',[IncomeCategoryController::class,'restore'])->name('admin.IncomeCategory.restore');
 Route::delete('/admin/IncomeCategory/delete',[IncomeCategoryController::class,'destroy'])->name('admin.IncomeCategory.destroy');

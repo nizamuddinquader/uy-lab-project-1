@@ -56,7 +56,7 @@ Category Index
                         <td>{{ $income_category->incate_slug }}</td>
                         <td>{{ $income_category->incate_status }}</td>
                         <td class="btn_group_manage text-center">
-                            <a href="{{ route('admin.IncomeCategory.show', $income_category->incate_id) }}" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{ route('admin.IncomeCategory.show', $income_category->incate_slug) }}" class="btn btn-sm btn-primary">Edit</a>
                             <a href="{{ route('admin.IncomeCategory.edit', $income_category->incate_id) }}" class="btn btn-sm btn-success">Show</a>
                             <form action="{{ route('admin.IncomeCategory.destroy', $income_category->incate_id) }}" method="POST" class="d-inline">
                                 @csrf
